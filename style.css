@@ -1,0 +1,217 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    min-height: 100vh;
+    background-color: #fff;
+}
+.container{
+    border: 1px solid #fff;
+    box-shadow: 0 10px 10px rgba(0,0,0,0.25);
+    width: 400px;
+    height: 300px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    border-radius: 5px;
+    transition: .3s ease-in;
+}
+.container.hide{
+    left: -300px;
+}
+.head{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 50px;
+}
+.head .logo{
+    font-family: cursive;
+    padding-left: 9px;
+}
+.head .scorePlate{
+    font-family: system-ui;
+    font-weight: 600;
+    margin-right: 9px;
+    padding: 5px 20px;
+    border: 3px solid rgba(0,0,0,0.1);
+}
+.main{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    flex: 1;
+    gap: 10px;
+}
+.main .question-text{
+    height: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 8px;
+    justify-content: flex-start;
+    font-family: Arial;
+    font-size: 18px;
+}
+.main .option-list{
+    width: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 30px;
+    gap: 8px;
+}
+.main .option-list .option{
+    border: 1px solid rgba(0,0,0,0.1);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-family: system-ui;
+    font-size: 14px;
+    padding-left: 8px;
+    cursor: pointer;
+    transition: .3s ease-in;
+}
+.main .option-list .option.correct{
+    border: 3px solid green;
+    color: green;
+}
+.main .option-list .option.incorrect{
+    border: 3px solid red;
+    color: red;
+    animation:  wrong .5s ease;
+    animation-delay: .2s;
+
+}
+@keyframes wrong{
+    0%{
+        margin-right: 50px;
+    }
+    50%{
+        margin-right: -50px;
+    }
+    60%{
+        margin-right: 0;
+    }
+    80%{
+        margin-right: 50px;
+    }
+    90%{
+        margin-right: -50px;
+    }
+    100%{
+        margin-right: 0;
+    }
+}
+.main .option-list .option.disable{
+    pointer-events: none;
+}
+.main .option-list .option:hover{
+    transform: scale(1.15);
+    box-shadow: 0 8px 8px rgba(0,0,0,0.25);
+}
+.foot{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 50px;
+    
+}
+.foot .sheetBoard{
+    font-family: system-ui;
+    font-weight: 600;
+    margin-left: 9px;
+    padding: 5px 20px;
+    border: 3px solid rgba(0,0,0,0.1);
+}
+.foot .nextBtn{
+    font-family: system-ui;
+    font-weight: 600;
+    margin-right: 9px;
+    padding: 5px 20px;
+    cursor: pointer;
+    border: 3px solid rgba(0,0,0,0.1);
+    transition: .3s ease-in;
+}
+.foot .nextBtn.disable{
+    pointer-events: none;
+}
+
+.foot .nextBtn:hover{
+    transform: scale(1.2); 
+}
+
+/* Result Box */
+.result-box{
+    border: 1px solid #fff;
+    box-shadow: 0 10px 10px rgba(0,0,0,0.25);
+    width: 400px;
+    height: 300px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: -500px;
+    left: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    border-radius: 5px;
+    transition: .5s ease;
+}
+.result-box.reveal{
+    top: 50%;
+}
+.result-box h2{
+    font-family: cursive;
+}
+.finalResult{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 150px;
+    font-family: system-ui;
+}
+.percentage{
+    border: 1px solid gray;
+    border-radius: 10px;
+    width: 30%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    font-size: 20px;
+}
+.result-box .congrats{
+    text-transform: capitalize;
+    padding: 5px 20px;
+    font-size: 30px;
+    font-family: system-ui;
+}
+.result-box .tryAgain{
+    padding: 9px 80px;
+    margin-bottom: 10px;
+    font-family: system-ui;
+    cursor: pointer;
+}
+.result-box .tryAgain.failed{
+    display: none;
+}
