@@ -11,7 +11,7 @@ body{
     border: 1px solid #fff;
     box-shadow: 0 10px 10px rgba(0,0,0,0.25);
     width: 400px;
-    height: 300px;
+    height: 400px;
     position: absolute;
     transform: translate(-50%,-50%);
     top: 50%;
@@ -25,7 +25,7 @@ body{
     transition: .3s ease-in;
 }
 .container.hide{
-    left: -300px;
+    left: -1000px;
 }
 .head{
     width: 100%;
@@ -35,7 +35,7 @@ body{
     height: 50px;
 }
 .head .logo{
-    font-family: cursive;
+    font-family: sans-serif;
     padding-left: 9px;
 }
 .head .scorePlate{
@@ -83,16 +83,17 @@ body{
     font-family: system-ui;
     font-size: 14px;
     padding-left: 8px;
+    background-color: #fff;
     cursor: pointer;
     transition: .3s ease-in;
 }
 .main .option-list .option.correct{
-    border: 3px solid green;
-    color: green;
+    background-color: green;
+    color: #fff;
 }
 .main .option-list .option.incorrect{
-    border: 3px solid red;
-    color: red;
+    background-color: red;
+    color: #fff;
     animation:  wrong .5s ease;
     animation-delay: .2s;
 
@@ -178,7 +179,7 @@ body{
     top: 50%;
 }
 .result-box h2{
-    font-family: cursive;
+    font-family: sans-serif;
 }
 .finalResult{
     width: 100%;
@@ -210,8 +211,37 @@ body{
     padding: 9px 80px;
     margin-bottom: 10px;
     font-family: system-ui;
+    border: 1px solid #fff;
+    font-weight: 900;
     cursor: pointer;
 }
 .result-box .tryAgain.failed{
     display: none;
+}
+/* responsiveness */
+@media screen and (max-width: 912px){
+    .container,
+    .result-box{
+        width: 700px;
+        height: 500px;
+    }
+    .main .question-text{
+        font-size: 25px;
+    }
+    .main .option-list .option{
+        font-size: 20px;
+    }
+}
+@media screen and (max-width: 414px){
+    .container,
+    .result-box{
+        width: 300px;
+        height: 400px;
+    }
+    .main .question-text{
+        font-size: inherit;
+    }
+    .main .option-list .option{
+        font-size: inherit;
+    }
 }
