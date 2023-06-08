@@ -219,17 +219,17 @@ body{
     display: none;
 }
 /* responsiveness */
-@media screen and (max-width: 912px){
+@media screen and (max-width: 712px){
     .container,
     .result-box{
-        width: 700px;
-        height: 500px;
+        width: 400px;
+        height: 400px;
     }
     .main .question-text{
-        font-size: 25px;
+        font-size: 18px;
     }
     .main .option-list .option{
-        font-size: 20px;
+        font-size: 16px;
     }
 }
 @media screen and (max-width: 414px){
