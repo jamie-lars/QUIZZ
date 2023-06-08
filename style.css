@@ -88,11 +88,11 @@ body{
     transition: .3s ease-in;
 }
 .main .option-list .option.correct{
-    background-color: green;
+    background-color: rgb(117, 179, 117);
     color: #fff;
 }
 .main .option-list .option.incorrect{
-    background-color: red;
+    background-color: rgb(204, 80, 80);
     color: #fff;
     animation:  wrong .5s ease;
     animation-delay: .2s;
